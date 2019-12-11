@@ -1,4 +1,4 @@
-from source.Person import Person
+from Person import Person
 
 
 class Author(Person):

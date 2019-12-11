@@ -1,6 +1,6 @@
-from source.LibraryControler import LibraryControler
-from source.Person import Person
-from source.LibraryItem import LibraryItem
+from LibraryControler import LibraryControler
+from Person import Person
+from LibraryItem import LibraryItem
 
 
 biblioteka = LibraryControler('biblioteczken')

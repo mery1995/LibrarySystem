@@ -1,5 +1,5 @@
-from source import Author
-from source.LibraryItem import LibraryItem
+from Author import Author
+from LibraryItem import LibraryItem
 
 
 class LibraryControler:
