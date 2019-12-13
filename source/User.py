@@ -1,9 +1,9 @@
 import random
 import datetime
 
-from source import LibraryItem
-from source.Person import Person
-
+from LibraryItem import LibraryItem
+from Person import Person
+from termcolor import colored
 
 def generate_id():
     gen = random.randint(100000, 999999)
@@ -12,6 +12,7 @@ def generate_id():
 
 class User(Person):
     loaned_books = []
+
     def __init__(self, first_name: str, last_name: str, pesel: int, email:str):
         self.first_name = first_name
         self.last_name = last_name
@@ -34,3 +35,11 @@ class User(Person):
             book.is_loaned = False
             book.loan_date = None
             self.loaned_books.pop(self.loaned_books.index(book))
+
+    def books_loaned(self):
+        if len(self.loaned_books) == 0:
+            print('Nie masz wypożyczonych książek.')
+        for book in self.loaned_books:
+            print(f'Książka {book.title} autorstwa {book.author.first_name} {book.author.last_name} wypożyczona {book.loan_date}.')
+            if book.is_overdue:
+                print(colored('Termin zwrotu książki minął!', 'red'))
