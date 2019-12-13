@@ -1,3 +1,3 @@
 import MenuBuilder as m
 
-m.main_m()  #XDDDDDDDDDDD super wielki main
+m.main_m() 
