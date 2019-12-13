@@ -5,6 +5,7 @@ from LibraryItem import LibraryItem
 from Person import Person
 from termcolor import colored
 
+
 def generate_id():
     gen = random.randint(100000, 999999)
     return gen

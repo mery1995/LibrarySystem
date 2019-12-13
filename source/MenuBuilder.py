@@ -12,7 +12,7 @@ import DemoData
 clear = lambda: os.system('cls')
 main_menu = ['1. Obsługa czytelnika', '2. Obsługa bibliotekarza', '3. Wgraj demonstracyjne dane', '4. Wyjdź']
 user_menu = ['1. Moje dane', '2. Sprawdź wypożyczone ksiązki', '3. Wypożycz książkę', '4. Zwróć książkę', '5. Cofnij']
-librarian_menu = ['1. Lista użytkowników', '2. Lista książek', '3. Dodaj Książkę', '4. Dodaj Czytelnika', '5.Cofnij']
+librarian_menu = ['1. Lista użytkowników', '2. Lista książek', '3. Dodaj książkę', '4. Dodaj czytelnika', '5. Cofnij']
 biblioteka = LC('Biblioteka')
 
 
@@ -31,6 +31,7 @@ def print_main_m():
     for item in main_menu:
         print(main_menu[main_menu.index(item)])
         time.sleep(0.3)
+    print('\n')
 
 
 def main_m_contr():
@@ -48,12 +49,14 @@ def main_m_contr():
         time.sleep(2)
         main_m()
 
+
 def load_demo():
     DemoData.add_demo_users(biblioteka)
     DemoData.add_demo_books(biblioteka)
     print(colored('Załadowano pomyślnie!', 'green'))
     time.sleep(1)
     main_m()
+
 
 def user_m():
     clear()
@@ -62,8 +65,13 @@ def user_m():
 
 
 def print_user_m():
+    print(colored("""System biblioteczny
+
+    """, 'green'))
     for item in user_menu:
         print(user_menu[user_menu.index(item)])
+    print('\n')
+
 
 def set_login(is_logged):
     is_logged = True
@@ -99,7 +107,7 @@ def user_m_contr():
 
 
 def user_get_user(user: User):
-    print(f'''     Imię: {user.first_name}
+    print(f'''    Imię: {user.first_name}
     Nazwisko: {user.last_name}
     Pesel: {user.pesel}
     Email: {user.email}
@@ -135,9 +143,12 @@ def librarian_m():
 
 
 def print_librarian_m():
+    print(colored("""System biblioteczny
+
+    """, 'green'))
     for item in librarian_menu:
         print(librarian_menu[librarian_menu.index(item)])
-
+    print('\n')
 
 def librarian_m_contr():
     n = input('Podaj wybór: ')

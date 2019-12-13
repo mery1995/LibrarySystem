@@ -1,7 +1,6 @@
 
 from Person import Person
 import random
-#Adding users
 
 
 def add_demo_users(biblioteka):
@@ -15,6 +14,7 @@ def add_demo_users(biblioteka):
     biblioteka.add_user('Kazimierz', 'Piekarski', 95040294832, 'example@example.com')
     biblioteka.add_user('Asia', 'Nowakiewicz', 95040294832, 'example@example.com')
     biblioteka.add_user('Marcel', 'Nowakierski', 95040294832, 'example@example.com')
+
 
 def add_demo_books(biblioteka):
     biblioteka.add_book("Miecz Przeznaczenia", Person('Andrzej', 'Sapkowski'), str(random.randint(1000000000000, 9999999999999)))
